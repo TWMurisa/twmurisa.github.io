@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Such dir eins aus</title>
+    <link rel="icon" href="titel/loupe.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        html, body {
+            background: linear-gradient(90deg, #000000, #220000, #000000);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #ff0000, #660000, #ff0000);
+            padding: 15px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.8);
+        }
+
+        header img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 20px;
+        }
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .selection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-top: 150px;
+        }
+
+        .selection-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            height: 250px;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .selection-item img {
+            width: 180px;
+            height: auto;
+            max-height: 140px;
+            margin-bottom: 15px;
+        }
+
+        .selection-button {
+            padding: 10px 20px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            width: 80%;
+        }
+
+        .selection-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 6px 15px rgba(255, 0, 0, 0.7);
+        }
+
+        .selection-button:hover {
+            background: #cc0000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #660000, #ff0000, #660000);
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            font-size: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="bilder/titelogo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="landing1.html">Möchtest du auch eine Website?</a></li>
+                <li><a href="landing2.html">Free Twitch Banner und weiteres</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="selection">
+        <a href="pb.html" class="selection-item">
+            <span class="selection-button">Twitch Profilbilder</span>
+        </a>
+        <a href="banner.html" class="selection-item">
+            <span class="selection-button">Twitch Banner</span>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2025 Geschützt by TwitchMurisa
+    </footer>
+</body>
+
+</html>
