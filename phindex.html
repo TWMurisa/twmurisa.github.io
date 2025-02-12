@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Start</title>
     <link rel="icon" href="titel/shuttle.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
             font-family: 'Oswald', sans-serif;
         }
 
-        body {
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
             background: linear-gradient(90deg, #000000, #220000, #000000);
             color: white;
             text-align: center;
-            min-height: 100vh;
-            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow-y: auto;
         }
 
         header {
@@ -39,67 +39,10 @@
             z-index: 1000;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 10px;
-            display: block;
-        }
-
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            background: #440000;
-            top: 100%;
-            left: 0;
-            list-style: none;
-            padding: 10px 0;
-            min-width: 150px;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        nav ul li ul li a {
-            padding: 10px;
-            display: block;
-        }
-
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 100px;
-            padding: 20px;
-        }
-
         .social-links {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -109,17 +52,17 @@
             justify-content: center;
             text-decoration: none;
             color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 10px;
+            font-size: 22px;
+            padding: 15px;
+            border-radius: 15px;
             background: radial-gradient(circle, #660000, #ff0000);
-            width: 80%;
-            max-width: 300px;
+            width: 90%;
+            max-width: 350px;
         }
 
         .social-links img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin-right: 10px;
         }
 
@@ -132,62 +75,11 @@
             position: fixed;
             bottom: 0;
         }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                background: rgba(0, 0, 0, 0.9);
-                width: 100%;
-                text-align: center;
-            }
-
-            nav ul {
-                flex-direction: column;
-                padding: 20px 0;
-            }
-
-            nav ul li {
-                position: relative;
-            }
-
-            nav ul li ul {
-                position: static;
-                display: none;
-            }
-
-            nav ul li:hover ul {
-                display: block;
-            }
-
-            nav.active {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <img src="bilder/titelogo.png" alt="Logo" width="50">
-        <button class="menu-toggle">☰</button>
-        <nav>
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li>
-                    <a href="#">Dienste ▼</a>
-                    <ul>
-                        <li><a href="landing1.html">Website erstellen?</a></li>
-                        <li><a href="landing2.html">Twitch Banner & mehr</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -204,27 +96,6 @@
             </a>
         </div>
     </main>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const nav = document.querySelector("nav");
-
-        menuToggle.addEventListener("click", function () {
-            nav.classList.toggle("active");
-        });
-
-        // Dropdown-Menü für mobile Geräte aktivieren
-        document.querySelectorAll("nav ul li a").forEach((link) => {
-            link.addEventListener("click", function (event) {
-                const submenu = this.nextElementSibling;
-                if (submenu && submenu.tagName === "UL") {
-                    event.preventDefault(); // Verhindert das Springen zum Link
-                    submenu.classList.toggle("show");
-                }
-            });
-        });
-    });
-</script>
 
     <footer>
         &copy; 2025 Geschützt by TwitchMurisa
