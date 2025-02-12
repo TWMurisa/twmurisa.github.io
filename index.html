@@ -217,16 +217,18 @@
         </div>
     </main>
 
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            window.location.href = "phindex.html";
-        } else {
-            window.location.href = "index.html";
-        }
-    });
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var currentPage = window.location.pathname;
+            
+            if (isMobile && !currentPage.includes("phindex.html")) {
+                window.location.href = "phindex.html";
+            } else if (!isMobile && !currentPage.includes("index.html")) {
+                window.location.href = "index.html";
+            }
+        });
+    </script>
 
     <footer>
         &copy; 2025 Geschützt by TwitchMurisa
