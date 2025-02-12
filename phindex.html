@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="icon" href="titel/shuttle.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(90deg, #000000, #220000, #000000);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #660000;
+            padding: 10px 15px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: #440000;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            display: block;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: radial-gradient(circle, #660000, #ff0000);
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #660000;
+            color: white;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background: rgba(0, 0, 0, 0.9);
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav ul li {
+                position: relative;
+            }
+
+            nav ul li ul {
+                position: static;
+                display: none;
+            }
+
+            nav ul li:hover ul {
+                display: block;
+            }
+
+            nav.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="bilder/titelogo.png" alt="Logo" width="50">
+        <button class="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li>
+                    <a href="#">Dienste ▼</a>
+                    <ul>
+                        <li><a href="landing1.html">Website erstellen?</a></li>
+                        <li><a href="landing2.html">Twitch Banner & mehr</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Willkommen auf meiner Seite!</h2>
+        <p>Hier findest du coole Banner, Profilbilder und kostenlose Webseiten.</p>
+        <p>Folge mir auf meinen Plattformen!</p>
+
+        <div class="social-links">
+            <a href="https://www.twitch.tv/twitchmurisa" target="_blank">
+                <img src="bilder/twitchlogo.png" alt="Twitch"> Twitch
+            </a>
+            <a href="https://www.tiktok.com/@twitchmurisa" target="_blank">
+                <img src="bilder/tiktok-6338432_640.webp" alt="TikTok"> TikTok
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Geschützt by TwitchMurisa
+    </footer>
+</body>
+</html>
