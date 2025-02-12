@@ -66,6 +66,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -75,10 +76,12 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            padding: 15px;
+            padding: 20px;
             display: block;
+            background: #550000;
+            border-bottom: 1px solid #770000;
         }
 
         nav ul li ul {
@@ -87,12 +90,22 @@
             background: #440000;
             top: 100%;
             left: 0;
-            list-style: none;
-            padding: 10px 0;
-            min-width: 150px;
+            width: 100%;
+            padding: 0;
+            min-width: 200px;
         }
 
-        nav ul li:hover ul {
+        nav ul li ul li a {
+            font-size: 20px;
+            padding: 15px;
+            display: block;
+        }
+
+        nav ul li a.dropdown-toggle {
+            cursor: pointer;
+        }
+
+        nav ul li ul.active {
             display: block;
         }
 
@@ -146,16 +159,6 @@
             bottom: 0;
             font-size: 20px;
         }
-
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
@@ -164,12 +167,12 @@
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav id="navbar">
             <ul>
-                <li><a href="phindex.html">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li>
-                    <a href="#">Dienste ▼</a>
-                    <ul>
-                        <li><a href="phlanding1.html">Website erstellen</a></li>
-                        <li><a href="phlanding2.html">Twitch Banner u. weiteres</a></li>
+                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Dienste ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Website erstellen</a></li>
+                        <li><a href="#">Twitch Banner</a></li>
                     </ul>
                 </li>
             </ul>
@@ -198,6 +201,11 @@
     <script>
         function toggleMenu() {
             document.getElementById("navbar").classList.toggle("active");
+        }
+
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.target.nextElementSibling.classList.toggle("active");
         }
     </script>
 </body>
