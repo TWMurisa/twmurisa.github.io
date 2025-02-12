@@ -204,6 +204,27 @@
             </a>
         </div>
     </main>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+
+        menuToggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+        });
+
+        // Dropdown-Menü für mobile Geräte aktivieren
+        document.querySelectorAll("nav ul li a").forEach((link) => {
+            link.addEventListener("click", function (event) {
+                const submenu = this.nextElementSibling;
+                if (submenu && submenu.tagName === "UL") {
+                    event.preventDefault(); // Verhindert das Springen zum Link
+                    submenu.classList.toggle("show");
+                }
+            });
+        });
+    });
+</script>
 
     <footer>
         &copy; 2025 Geschützt by TwitchMurisa
