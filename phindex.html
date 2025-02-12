@@ -39,6 +39,53 @@
             z-index: 1000;
         }
 
+        .menu-toggle {
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: #440000;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
         main {
             width: 100%;
             max-width: 600px;
@@ -56,6 +103,7 @@
             gap: 25px;
             margin-top: 30px;
             width: 100%;
+            align-items: center;
         }
 
         .social-links a {
@@ -68,7 +116,7 @@
             padding: 20px;
             border-radius: 20px;
             background: radial-gradient(circle, #660000, #ff0000);
-            width: 100%;
+            width: 90%;
             max-width: 400px;
         }
 
@@ -88,11 +136,45 @@
             bottom: 0;
             font-size: 20px;
         }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.active {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="bilder/titelogo.png" alt="Logo" width="60">
+        <button class="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Dienste ▼</a>
+                    <ul>
+                        <li><a href="#">Website erstellen</a></li>
+                        <li><a href="#">Twitch Banner</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
