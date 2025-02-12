@@ -45,17 +45,27 @@
             border: none;
             color: white;
             cursor: pointer;
-            display: none;
+            display: block;
         }
 
         nav {
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav.active {
             display: flex;
         }
 
         nav ul {
             list-style: none;
-            display: flex;
-            gap: 15px;
+            padding: 0;
         }
 
         nav ul li {
@@ -67,7 +77,7 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: 600;
-            padding: 10px;
+            padding: 15px;
             display: block;
         }
 
@@ -138,23 +148,12 @@
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
             nav {
                 display: none;
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
-                text-align: center;
             }
 
-            nav.active {
-                display: flex;
+            .menu-toggle {
+                display: block;
             }
         }
     </style>
@@ -162,8 +161,8 @@
 <body>
     <header>
         <img src="bilder/titelogo.png" alt="Logo" width="60">
-        <button class="menu-toggle">☰</button>
-        <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="navbar">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li>
@@ -195,5 +194,11 @@
     <footer>
         &copy; 2025 Geschützt by TwitchMurisa
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
