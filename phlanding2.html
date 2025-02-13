@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             overflow-x: hidden;
             padding-top: 80px;
         }
@@ -107,9 +107,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 30px; /* Weniger Abstand zum Header */
             width: 100%;
         }
 
@@ -142,13 +141,12 @@
 
         footer {
             text-align: center;
-            padding: 15px;
-            background: #660000;
-            color: white;
+            padding: 10px;
+            background: linear-gradient(90deg, #660000, #ff0000, #660000);
             width: 100%;
             position: fixed;
             bottom: 0;
-            font-size: 20px;
+            font-size: 12px;
         }
     </style>
 </head>
