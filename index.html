@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BetterAdmin - Mobil</title>
+  <link rel="stylesheet" href="assets/index/css/style.css" />
+</head>
+<body>
+
+  <!-- Mobile Navbar -->
+  <nav class="navbar">
+    <div class="navbar-top">
+      <img src="assets/index/logo/logo.png" alt="Logo" class="logo">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#start">Start</a></li>
+      <li><a href="#leistungen">Dienstleistungen</a></li>
+      <li><a href="#beratung">Beratung</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero-section" id="start">
+    <h1>BetterAdmin</h1>
+    <p>Deine moderne IT-Lösung</p>
+    <a href="#leistungen" class="btn-discover">Jetzt entdecken 🚀</a>
+  </header>
+
+  <!-- Leistungen -->
+  <section class="section" id="leistungen">
+    <h2>Unsere Dienstleistungen</h2>
+    <div class="card">
+      <h3>💼 IT-Beratung</h3>
+      <p>Cloud, Homelabs, Server, Schulungen</p>
+    </div>
+    <div class="card">
+      <h3>🛠 Systeminstallation</h3>
+      <p>Linux / Windows, Datenschutz, Tools</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Dienste & Netzwerke</h3>
+      <p>Server, AD, Netzlaufwerke, Backups</p>
+    </div>
+  </section>
+
+  <!-- Beratung -->
+  <section class="section alt" id="beratung">
+    <h2>IT-Beratung & Service</h2>
+    <p>Strategisch denken. Sicher handeln. Persönlich begleitet.</p>
+    <img src="assets/index/icons/beratung.png" alt="Beratung" class="section-icon">
+  </section>
+
+  <!-- Kontakt -->
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <form method="POST" action="kontakt-verarbeiten.php">
+      <input type="text" name="vorname" placeholder="Vorname" required />
+      <input type="text" name="nachname" placeholder="Nachname" required />
+      <input type="email" name="email" placeholder="E-Mail" required />
+      <textarea name="nachricht" placeholder="Deine Nachricht" required></textarea>
+      <button type="submit">Senden 🚀</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BetterAdmin</p>
+    <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
