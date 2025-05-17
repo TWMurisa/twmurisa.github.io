@@ -11,6 +11,51 @@ section, header {
   text-align: center;
 }
 
+/* Hero Bereich (Vollbild) */
+.hero-section {
+  height: 100vh;
+  background: url('../header/header.png') center center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #eee;
+  padding: 0 20px;
+}
+
+/* Dunkle Überlagerung für bessere Lesbarkeit */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(16, 16, 16, 0.7); /* leicht dunkler Overlay */
+  z-index: 1;
+  border-radius: 0;
+}
+
+/* Inhalt im Vordergrund */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-inner h1 {
+  font-size: 2.4rem;
+  color: #A8ED79;
+  margin-bottom: 10px;
+}
+
+.hero-inner p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+
 h1, h2 {
   color: #A8ED79;
 }
