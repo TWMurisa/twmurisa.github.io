@@ -13,5 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
 
     fadeInElements.forEach(el => observer.observe(el));
+
+    
   }
+
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+  const links = document.getElementById('nav-links');
+  links.classList.toggle('active');
+});
+
 });
