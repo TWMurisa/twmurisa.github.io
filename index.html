@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetterAdmin - Mobil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <img src="assets/index/logo/logo.png" alt="Logo">
+    <a class="nav-link" href="#">Start</a>
+    <a class="nav-link" href="#leistungen">Dienstleistungen</a>
+    <a class="nav-link" href="#webdesign">Webdesign</a>
+    <a class="nav-link" href="#unternehmen">Unternehmen</a>
+    <a class="nav-link" href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="btn-request">Anfragen 🚀</a>
+  </nav>
+
+  <header class="header-image">
+    <img src="assets/index/header/header.png" alt="Header Bild">
+    <div class="header-content">
+      <a href="#services" class="btn-discover">Jetzt entdecken 🚀</a>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2 class="section-title">Unsere Dienstleistungen</h2>
+    <div class="service-box">
+      <h5>Persönliche IT-Beratung</h5>
+      <ul>
+        <li>Homelabs & PC-Beschaffung</li>
+        <li>Cloud, Server, Streaming</li>
+        <li>Schulung & Support</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="beratung-inner">
+    <img src="assets/index/icons/beratung.png" class="beratung-icon" alt="Beratung">
+    <h3>Umfassende IT-Beratung</h3>
+    <p>Strategische Beratung für mehr Effizienz und Sicherheit.</p>
+  </section>
+
+  <footer>
+    <h4>Kontakt aufnehmen</h4>
+    <form method="POST" action="kontakt-verarbeiten.php">
+      <input type="text" name="vorname" placeholder="Vorname" required>
+      <input type="text" name="nachname" placeholder="Nachname" required>
+      <input type="email" name="email" placeholder="E-Mail" required>
+      <input type="tel" name="telefon" placeholder="Telefon">
+      <textarea name="nachricht" rows="4" placeholder="Deine Nachricht" required></textarea>
+      <button type="submit">Anfrage senden 🚀</button>
+    </form>
+    <div>
+      <a href="#" class="footer-link">Impressum</a>
+      <a href="#" class="footer-link">Datenschutz</a>
+    </div>
+    <div class="social-icons">
+      <a class="social-icon" href="mailto:kontakt@deine-seite.de"><img src="assets/index/icons/email.png" alt="E-Mail"></a>
+      <a class="social-icon" href="tel:+49123456789"><img src="assets/index/icons/phone.png" alt="Telefon"></a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
