@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BetterAdmin - Mobil</title>
-  <link rel="stylesheet" href="assets/index/css/style.css">
+  <link rel="stylesheet" href="assets/index/css/style.css" />
 </head>
 <body>
 
+  <!-- Mobile Navbar -->
   <nav class="navbar">
-    <img src="assets/index/logo/logo.png" alt="Logo">
-    <a class="nav-link" href="#">Start</a>
-    <a class="nav-link" href="#leistungen">Dienstleistungen</a>
-    <a class="nav-link" href="#webdesign">Webdesign</a>
-    <a class="nav-link" href="#unternehmen">Unternehmen</a>
-    <a class="nav-link" href="#kontakt">Kontakt</a>
-    <a href="#kontakt" class="btn-request">Anfragen 🚀</a>
+    <div class="navbar-top">
+      <img src="assets/index/logo/logo.png" alt="Logo" class="logo">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#start">Start</a></li>
+      <li><a href="#leistungen">Dienstleistungen</a></li>
+      <li><a href="#beratung">Beratung</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
   </nav>
 
-  <header class="header-image">
-    <img src="assets/index/header/header.png" alt="Header Bild">
-    <div class="header-content">
-      <a href="#services" class="btn-discover">Jetzt entdecken 🚀</a>
-    </div>
+  <!-- Header Section -->
+  <header class="hero-section" id="start">
+    <h1>BetterAdmin</h1>
+    <p>Deine moderne IT-Lösung</p>
+    <a href="#leistungen" class="btn-discover">Jetzt entdecken 🚀</a>
   </header>
 
-  <section id="services">
-    <h2 class="section-title">Unsere Dienstleistungen</h2>
-    <div class="service-box">
-      <h5>Persönliche IT-Beratung</h5>
-      <ul>
-        <li>Homelabs & PC-Beschaffung</li>
-        <li>Cloud, Server, Streaming</li>
-        <li>Schulung & Support</li>
-      </ul>
+  <!-- Leistungen -->
+  <section class="section" id="leistungen">
+    <h2>Unsere Dienstleistungen</h2>
+    <div class="card">
+      <h3>💼 IT-Beratung</h3>
+      <p>Cloud, Homelabs, Server, Schulungen</p>
+    </div>
+    <div class="card">
+      <h3>🛠 Systeminstallation</h3>
+      <p>Linux / Windows, Datenschutz, Tools</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Dienste & Netzwerke</h3>
+      <p>Server, AD, Netzlaufwerke, Backups</p>
     </div>
   </section>
 
-  <section class="beratung-inner">
-    <img src="assets/index/icons/beratung.png" class="beratung-icon" alt="Beratung">
-    <h3>Umfassende IT-Beratung</h3>
-    <p>Strategische Beratung für mehr Effizienz und Sicherheit.</p>
+  <!-- Beratung -->
+  <section class="section alt" id="beratung">
+    <h2>IT-Beratung & Service</h2>
+    <p>Strategisch denken. Sicher handeln. Persönlich begleitet.</p>
+    <img src="assets/index/icons/beratung.png" alt="Beratung" class="section-icon">
   </section>
 
-  <footer>
-    <h4>Kontakt aufnehmen</h4>
+  <!-- Kontakt -->
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
     <form method="POST" action="kontakt-verarbeiten.php">
-      <input type="text" name="vorname" placeholder="Vorname" required>
-      <input type="text" name="nachname" placeholder="Nachname" required>
-      <input type="email" name="email" placeholder="E-Mail" required>
-      <input type="tel" name="telefon" placeholder="Telefon">
-      <textarea name="nachricht" rows="4" placeholder="Deine Nachricht" required></textarea>
-      <button type="submit">Anfrage senden 🚀</button>
+      <input type="text" name="vorname" placeholder="Vorname" required />
+      <input type="text" name="nachname" placeholder="Nachname" required />
+      <input type="email" name="email" placeholder="E-Mail" required />
+      <textarea name="nachricht" placeholder="Deine Nachricht" required></textarea>
+      <button type="submit">Senden 🚀</button>
     </form>
-    <div>
-      <a href="#" class="footer-link">Impressum</a>
-      <a href="#" class="footer-link">Datenschutz</a>
-    </div>
-    <div class="social-icons">
-      <a class="social-icon" href="mailto:kontakt@deine-seite.de"><img src="assets/index/icons/email.png" alt="E-Mail"></a>
-      <a class="social-icon" href="tel:+49123456789"><img src="assets/index/icons/phone.png" alt="Telefon"></a>
-    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BetterAdmin</p>
+    <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
   </footer>
 
   <script src="main.js"></script>
