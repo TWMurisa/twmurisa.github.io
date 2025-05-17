@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BetterAdmin - Mobil</title>
+  <link rel="stylesheet" href="assets/index/css/style.css" />
+</head>
+<body>
+
+  <!-- Mobile Navbar -->
+  <nav class="navbar">
+    <div class="navbar-top">
+      <img src="assets/index/logo/logo.png" alt="Logo" class="logo">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+    </div>
+    <div class="nav-links" id="nav-links">
+  <a href="#start">Start</a>
+  <a href="#leistungen">Dienstleistungen</a>
+  <a href="#beratung">Beratung</a>
+  <a href="#kontakt">Kontakt</a>
+</div>
+  </nav>
+
+  <!-- Header Section -->
+<header class="hero-section" id="start">
+  <div class="hero-inner">
+    <h1>BetterAdmin</h1>
+    <p>Deine moderne IT-Lösung</p>
+    <a href="#leistungen" class="btn-discover">Jetzt entdecken 🚀</a>
+  </div>
+</header>
+
+
+  <!-- Leistungen -->
+  <section class="section" id="leistungen">
+    <h2>Unsere Dienstleistungen</h2>
+    <div class="card">
+      <h3>💼 Persönliche IT-Beratung & Schulung</h3>
+      <p>✔ PC-/Server-Anschaffungen (Homelabs)</p>
+      <p>✔ Hardware-, Software-, Anbieter-Vergleich</p>
+      <p>✔ Heim-/Kleinbüro-Technikfragen</p>
+      <p>✔ Einstieg: Cloud, Server, Streaming</p>
+      <p>✔ Schulungen & Schritt-für-Schritt-Anleitungen</p>
+    </div>
+    <div class="card">
+      <h3>🛠 Systeminstallation & Grundkonfiguration</h3>
+      <p>✔ Einrichtung von Windows- und Linux-Systemen (z. B. Ubuntu, Debian)</p>
+      <p>✔ Optimierung für schnelles, sicheres Arbeiten</p>
+      <p>✔ Installation von wichtigen Programmen und Datenschutz-Tools</p>
+    </div>
+    <div class="card">
+      <h3>🖥️ Server & Netzwerk – Einrichtung & Betreuung</h3>
+      <p>✔ Einrichtung von Servern für Zuhause oder das Büro</p>
+      <p>✔ Windows-Server mit Active Directory (Benutzer- & Rechteverwaltung)</p>
+      <p>✔ Dienste wie Netzlaufwerke, Freigaben, automatisierte Backups</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Dienste & Anwendungen – Installation & Konfiguration</h3>
+      <p>✔ Webserver (z. B. NGINX), Medienserver (z. B. Jellyfin), Cloud-Apps</p>
+      <p>✔ Einrichtung und Erklärung der Benutzeroberflächen</p>
+      <p>✔ Beratung zur Auswahl & Nutzung passender Dienste</p>
+    </div>
+    <div class="card">
+      <h3>🌍 Virtualisierung mit Proxmox</h3>
+      <p>✔ Einrichtung eines Grundsystems mit Proxmox VE</p>
+      <p>✔ Unterstützung bei ersten virtuellen Maschinen & Containern</p>
+      <p>✔ Einführung in Sicherung & Verwaltung (GUI-basiert)</p>
+    </div>
+    <div class="card">
+      <h3>📡 Website-Erstellung & Pflege</h3>
+      <p>✔ Erstellung einfacher, moderner Websites (z. B. für Selbstständige, Vereine, Praxen)</p>
+      <p>✔ Mobile Optimierung & Suchmaschinenfreundlichkeit (SEO)</p>
+      <p>✔ Technische Betreuung & kleinere Änderungen</p>
+    </div>
+    <div class="card">
+      <h3>👷‍♀️ Hosting & Domains (noch in Arbeit)</h3>
+      <p>✔ Eigene KVM-Server & Webspace-Lösungen (ab 2026)</p>
+      <p>✔ Beratung & Einrichtung von Domains, E-Mails, Backups</p>
+    </div>
+    <div class="card">
+      <h3>➕ Zusatzleistungen</h3>
+      <p>✔ Fernwartung & technischer Hilfe-Service</p>
+      <p>✔ Dokumentation & einfache Anleitungen bei Übergabe</p>
+      <p>✔ Monatliche Wartungs- & Pflegepakete (auf Wunsch)</p>
+    </div>
+    <div class="card">
+      <h3>❔ Interesse</h3>
+        <a href="kontakt.html" class="btn btn-discover">Jetzt Kontakt aufnehmen 🚀</a>
+    </div>
+  </section>
+
+  <!-- Beratung -->
+  <section class="section alt" id="beratung">
+    <h2>IT-Beratung</h2>
+    <p>Strategische IT-Beratung für optimale Lösungen! Wir analysieren deine <br> 
+          IT-Struktur, optimieren Prozesse und entwickeln zukunftssichere Strategien.<br>
+           Profitiere von maßgeschneiderten Lösungen für mehr Effizienz und Sicherheit.  </p>
+    <img src="assets/index/icons/beratung.png" alt="Beratung" class="section-icon">
+    <h2>IT-Service</h2>
+     <p>Zuverlässiger IT-Service für dein Unternehmen oder privaten Haushalt! <br> Wir kümmern uns um Wartung, Support und Sicherheit, damit deine <br> 
+          Systeme reibungslos laufen. Schnell, effizient und individuell auf deine <br>
+          Bedürfnisse angepasst. </p>
+    <img src="assets/index/icons/secure.png" alt="Beratung" class="section-icon">
+  </section>
+
+  <!-- Kontakt -->
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <form method="POST" action="kontakt-verarbeiten.php">
+      <input type="text" name="vorname" placeholder="Vorname" required />
+      <input type="text" name="nachname" placeholder="Nachname" required />
+      <input type="email" name="email" placeholder="E-Mail" required />
+      <textarea name="nachricht" placeholder="Deine Nachricht" required></textarea>
+      <button type="submit">Senden 🚀</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BetterAdmin</p>
+    <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+  </footer>
+
+  <script src="assets/index/js/main.js"></script>
+</body>
+</html>
