@@ -79,6 +79,9 @@ form button {
 .navbar {
   background-color: #000;
   padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-top {
@@ -95,14 +98,24 @@ form button {
   background: none;
   border: none;
   color: #A8ED79;
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .nav-links {
   display: none;
   flex-direction: column;
-  margin-top: 10px;
+  position: absolute;
+  top: 60px; /* unterhalb der Navbar */
+  right: 10px; /* rechtsbündig */
+  width: 80%;
+  max-width: 280px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 1000;
+  animation: fadeSlide 0.3s ease-out;
 }
 
 .nav-links.active {
@@ -110,9 +123,37 @@ form button {
 }
 
 .nav-links a {
-  padding: 10px 0;
-  border-bottom: 1px solid #222;
+  background-color: #2a2a2a;
+  color: #A8ED79;
+  text-decoration: none;
+  padding: 15px;
+  margin: 6px 0;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.nav-links a:hover {
+  background-color: #333;
+  transform: translateX(4px);
+  color: #d6ffad;
+}
+
+/* Animation beim Öffnen */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+
 
 /* Footer */
 footer {
