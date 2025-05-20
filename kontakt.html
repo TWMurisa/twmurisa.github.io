@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BetterAdmin – Kontakt</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/Kontakt/css/kontakt.css" />
+</head>
+<body>
+
+  <!-- Header-Bild -->
+  <header class="custom-header">
+    <img src="assets/Kontakt/header/header.png" alt="Header" class="header-image" />
+  </header>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg rounded-nav">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="#">
+      <img src="assets/index/logo/logo.png" alt="Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+        <li class="nav-item"><a class="nav-link" href="leistungen.html">Dienstsleistungen</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Webdesign</a></li>
+        <li class="nav-item"><a class="nav-link" href="abtus.html">Unternehmen</a></li>
+        <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <a href="kontakt.html" class="btn btn-request">Anfragen 🚀</a>
+  </div>
+</nav>
+
+  <!-- Kontaktbereich -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-4">
+
+        <!-- Formular & Notfallkontakt -->
+        <div class="flex-grow-1 w-100">
+          <div class="d-flex flex-column flex-sm-row align-items-start justify-content-between mb-4">
+            <h1 class="section-title">Kontakt aufnehmen</h1>
+            <div class="contact-emergency-box d-flex align-items-center px-3 py-2 ms-sm-4 mt-2 mt-sm-0">
+              <span class="me-2 fs-4 text-danger">📞</span>
+              <div>
+                <div class="fw-bold text-success">Notfallkontakt</div>
+                <div class="d-flex flex-column flex-sm-row gap-3 mt-1">
+                  <a href="tel:+49123456789" class="emergency-link">+49 123 456789</a>
+                  <a href="mailto:kontakt@betteradmin.de" class="emergency-link">kontakt@betteradmin.de</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formular -->
+          <div class="contact-wrapper">
+            <form id="kontakt-form" method="POST" action="assets/Kontaktphp/kontakt-verarbeitung.php">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" name="vorname" class="form-control dark-input" placeholder="Vorname" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="nachname" class="form-control dark-input" placeholder="Nachname" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control dark-input" placeholder="E-Mail" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" name="telefon" class="form-control dark-input" placeholder="Telefon (optional)" />
+                </div>
+                <div class="col-12">
+                  <textarea name="nachricht" class="form-control dark-input" placeholder="Deine Nachricht" required></textarea>
+                </div>
+                <div class="col-12">
+                  <input type="text" name="budget" class="form-control dark-input" placeholder="Optional: Dein geplantes Budget" />
+                </div>
+                <div class="col-12">
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-discover mt-2">Anfrage senden 🚀</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-dark">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="#kontakt-form">
+            <img src="assets/Kontakt/icons/logo.png" alt="Kontakt Logo" class="footer-cta-logo" />
+          </a>
+        </div>
+        <div class="col-md-5 offset-md-1">
+          <h4 class="text-light mb-3">Weitere Informationen</h4>
+          <ul class="list-unstyled text-muted">
+            <li><a href="#" class="footer-link">Impressum</a></li>
+            <li><a href="#" class="footer-link">Datenschutz</a></li>
+            <li><a href="#" class="footer-link">AGB</a></li>
+            <li><a href="#" class="footer-link">Cookie-Richtlinie</a></li>
+          </ul>
+          <div class="social-icons mt-4 d-flex gap-3 justify-content-center justify-content-md-start">
+            <a href="mailto:kontakt@deine-seite.de" class="social-icon" title="E-Mail"><img src="assets/index/icons/email.png" alt="E-Mail" class="icon-img" /></a>
+            <a href="tel:+49123456789" class="social-icon" title="Telefon"><img src="assets/index/icons/phone.png" alt="Telefon" class="icon-img" /></a>
+            <a href="https://discord.gg/deinserver" class="social-icon" title="Discord"><img src="assets/index/icons/discord.png" alt="Discord" class="icon-img" /></a>
+            <a href="https://youtube.com/..." class="social-icon" title="YouTube"><img src="assets/index/icons/yt.png" alt="YouTube" class="icon-img" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5 text-muted small">© 2025 BetterAdmin – Alle Rechte vorbehalten</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
