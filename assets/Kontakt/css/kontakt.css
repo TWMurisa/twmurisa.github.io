@@ -1,0 +1,294 @@
+/* Basisregel zur Sicherheit */
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #101010;
+  color: #eee;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #A8ED79;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* unterhalb der Navbar */
+  right: 10px; /* rechtsbündig */
+  width: 80%;
+  max-width: 280px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 1000;
+  animation: fadeSlide 0.3s ease-out;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  background-color: #2a2a2a;
+  color: #A8ED79;
+  text-decoration: none;
+  padding: 15px;
+  margin: 6px 0;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #333;
+  transform: translateX(4px);
+  color: #d6ffad;
+}
+
+/* Animation beim Öffnen */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Mobile & Tablet Ansicht */
+@media (max-width: 992px) {
+
+  /* Navbar Anpassungen */
+  .navbar-nav .nav-link {
+    margin: 8px 0;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .btn-request {
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-brand img {
+    height: 38px;
+  }
+
+  .navbar-toggler {
+    border-color: #A8ED79;
+  }
+
+  /* Header-Bild */
+  .header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Kontaktbereich */
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-wrapper {
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 14px;
+    box-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.4),
+      0 0 14px rgba(168, 237, 121, 0.2);
+  }
+
+  .contact-wrapper h1,
+  .section-title {
+    font-size: 1.7rem;
+    text-align: center;
+    color: #A8ED79;
+  }
+
+  .form-control.dark-input {
+    background-color: #111;
+    color: #eee;
+    border: 1px solid #333;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .form-control.dark-input::placeholder {
+    color: #aaa;
+  }
+
+  textarea.dark-input {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .btn-discover {
+    background-color: #A8ED79;
+    color: #101010;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    width: 100%;
+    transition: 0.3s ease;
+  }
+
+  .btn-discover:hover {
+    background-color: #cfff9b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(158, 227, 125, 0.4);
+  }
+
+  /* Notfallbox */
+  .contact-emergency-box {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    margin-top: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #A8ED79;
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .contact-emergency-box .d-flex {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .emergency-link {
+    color: #A8ED79;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .emergency-link:hover {
+    color: #d6ffad;
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  .footer-dark .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-dark .col-md-6,
+  .footer-dark .col-md-5,
+  .footer-dark .col-md-5.offset-md-1 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-cta-logo {
+    max-width: 160px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .footer-link {
+    color: #A8ED79;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    color: #cfff9b;
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .icon-img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(150%);
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover .icon-img {
+    transform: scale(1.2);
+    filter: brightness(200%);
+  }
+}
+
+/* Extrem kleine Geräte */
+@media (max-width: 480px) {
+  .navbar-brand img {
+    height: 34px;
+  }
+
+  .btn-request {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+
+  .section-title,
+  .contact-wrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-control.dark-input {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .btn-discover {
+    font-size: 1rem;
+    padding: 10px 22px;
+  }
+
+  .icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-cta-logo {
+    max-width: 120px;
+  }
+}
