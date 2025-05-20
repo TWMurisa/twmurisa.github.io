@@ -18,7 +18,7 @@
   <a href="#start">Start</a>
   <a href="#leistungen">Dienstleistungen</a>
   <a href="#beratung">Beratung</a>
-  <a href="#kontakt">Kontakt</a>
+  <a href="kontakt.html">Kontakt</a>
 </div>
   </nav>
 
@@ -96,7 +96,7 @@
     <p>Strategische IT-Beratung für optimale Lösungen! Wir analysieren deine <br> 
           IT-Struktur, optimieren Prozesse und entwickeln zukunftssichere Strategien.<br>
            Profitiere von maßgeschneiderten Lösungen für mehr Effizienz und Sicherheit.  </p>
-    <img src="assets/index/icons/beratung.png" alt="Beratung" class="section-icon">
+    <img src="assets/index/icons/beratung.png" alt= "Beratung" class="section-icon">
     <h2>IT-Service</h2>
      <p>Zuverlässiger IT-Service für dein Unternehmen oder privaten Haushalt! <br> Wir kümmern uns um Wartung, Support und Sicherheit, damit deine <br> 
           Systeme reibungslos laufen. Schnell, effizient und individuell auf deine <br>
@@ -104,22 +104,43 @@
     <img src="assets/index/icons/secure.png" alt="Beratung" class="section-icon">
   </section>
 
-  <!-- Kontakt -->
-  <section class="section" id="kontakt">
-    <h2>Kontakt</h2>
-    <form method="POST" action="kontakt-verarbeiten.php">
-      <input type="text" name="vorname" placeholder="Vorname" required />
-      <input type="text" name="nachname" placeholder="Nachname" required />
-      <input type="email" name="email" placeholder="E-Mail" required />
-      <textarea name="nachricht" placeholder="Deine Nachricht" required></textarea>
-      <button type="submit">Senden 🚀</button>
-    </form>
-  </section>
+  
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 BetterAdmin</p>
-    <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+    
+    
+   <!-- Footer-Links und Socials -->
+      <div class="col-md-5 offset-md-1">
+        <h4 class="text-light mb-3">Weitere Informationen</h4>
+        <ul class="list-unstyled text-muted">
+          <li><a href="#" class="footer-link">Impressum</a></li>
+          <li><a href="#" class="footer-link">Datenschutz</a></li>
+          <li><a href="#" class="footer-link">AGB</a></li>
+          <li><a href="#" class="footer-link">Cookie-Richtlinie</a></li>
+        </ul>
+        <div class="social-icons mt-4 d-flex gap-3 justify-content-center justify-content-md-start">
+
+          <a href="mailto:kontakt@deine-seite.de" class="social-icon" title="E-Mail">
+            <img src="assets/index/icons/email.png" alt="E-Mail" class="icon-img">
+          </a>
+        
+          <a href="tel:+49123456789" class="social-icon" title="Telefon">
+            <img src="assets/index/icons/phone.png" alt="Telefon" class="icon-img">
+          </a>
+        
+          <a href="https://discord.gg/deinserver" class="social-icon" title="Discord">
+            <img src="assets/index/icons/discord.png" alt="Discord" class="icon-img">
+          </a>
+        
+          <a href="https://youtube.com/..." class="social-icon" title="YouTube">
+            <img src="assets/index/icons/yt.png" alt="YouTube" class="icon-img">
+          </a>
+        
+        </div>
+        
+      </div>
+       <p>© 2025 BetterAdmin</p> 
   </footer>
 
   <script src="assets/index/js/main.js"></script>
