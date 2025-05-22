@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Wochenplaner – Muris</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <h1>🗓️ Muris' Wochenplaner</h1>
+  <div id="planner"></div>
+  <button id="saveBtn">💾 Speichern</button>
+  <hr>
+<h2>📈 Auswertung</h2>
+<select id="reportRange">
+  <option value="thisWeek">Diese Woche</option>
+  <option value="lastWeek">Letzte Woche</option>
+  <option value="lastMonth">Letzter Monat</option>
+</select>
+<button id="loadReport">📊 Diagramm anzeigen</button>
+<canvas id="reportChart" width="600" height="300"></canvas>
+
+</body>
+</html>
