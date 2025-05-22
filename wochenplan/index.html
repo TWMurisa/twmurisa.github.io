@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muris' Erweiterter Wochenplan</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+    .center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    button {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    #planner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .day-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+    }
+    .radio {
+      margin-top: 1rem;
+    }
+    .radio label {
+      margin-right: 1rem;
+    }
+    .entry {
+      margin-bottom: 0.5rem;
+    }
+    .rezept {
+      max-width: 600px;
+      margin: 4rem auto 2rem;
+      padding: 1.5rem;
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+    .rezept h2 {
+      margin-top: 0;
+      color: #4caf50;
+    }
+    .rezept ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Muris' Erweiterter Wochenplan</h1>
+  <div id="planner"></div>
+  <div class="center">
+    <button onclick="exportToExcel()">📤 Exportieren als Excel</button>
+  </div>
+
+  <div class="rezept">
+    <h2>🥤 Muris' Greens-Shake (DIY Superfood)</h2>
+    <p><strong>Zutaten für 1 Portion:</strong></p>
+    <ul>
+      <li>200–250 ml Wasser oder ungesüßte Pflanzenmilch</li>
+      <li>1 TL Spirulina</li>
+      <li>1 TL Moringa</li>
+      <li>1 TL geschrotete Leinsamen</li>
+      <li>1 TL Zitronensaft</li>
+      <li>1 TL Leinöl</li>
+      <li>1 Handvoll Beeren (frisch oder TK)</li>
+      <li>Optional: ½ Banane für mehr Cremigkeit</li>
+    </ul>
+    <p><strong>Zubereitung:</strong><br>Alles in einem Mixer fein pürieren. Direkt nachmittags oder nach dem Training trinken. Ideal zur Nährstoffversorgung, Entgiftung und Energieauffrischung.</p>
+  </div>
+
+  <script>
+    const mahlzeiten = {
+      Montag:    { Frühstück: "Porridge", Mittag: "Reispfanne", Abendessen: "Ofengemüse" },
+      Dienstag:  { Frühstück: "Toast", Mittag: "Linsensalat", Abendessen: "Avocadosalat" },
+      Mittwoch:  { Frühstück: "Joghurt", Mittag: "Quinoa & Pute", Abendessen: "Tofu-Gemüsepfanne" },
+      Donnerstag:{ Frühstück: "Müsli", Mittag: "Bulgur-Bowl", Abendessen: "Rührei mit Pilzen" },
+      Freitag:   { Frühstück: "Obst", Mittag: "Linsennudeln", Abendessen: "Protein-Omelette" },
+      Samstag:   { Frühstück: "Pfannkuchen", Mittag: "Wrap", Abendessen: "Ofenkartoffeln" },
+      Sonntag:   { Frühstück: "Brötchen", Mittag: "Lachs & Gemüse", Abendessen: "Süßkartoffelpfanne" },
+    };
+
+    const tagesstruktur = [
+      ["05:30", "Aufstehen, Fenster öffnen, 1 Glas Wasser mit Prise Meersalz"],
+      ["05:35", "Stretching oder Hampelmänner"],
+      ["05:45", "Frühstück: {{Frühstück}}"],
+      ["05:50", "Supplemente: Vitamin D + K2, Omega-3"],
+      ["06:00", "Fertigmachen (Dusche, Tasche etc.)"],
+      ["06:25", "Abfahrt zur Arbeit"],
+      ["09:30", "Snack: Apfel + Mandeln oder Ei"],
+      ["12:00", "Mittagessen: {{Mittag}}"],
+      ["13:30", "Mini-Pause, Fenster + Nackenmobilisation"],
+      ["15:30", "Feierabend, Heimfahrt"],
+      ["16:00", "Greens-Shake (siehe Rezept unten)"],
+      ["16:30", "Training (Mo/Mi/Fr) oder Freundin (Di/Do)"],
+      ["18:00", "Abendessen: {{Abendessen}}"],
+      ["20:00", "Chillen / Freizeit"],
+      ["21:30", "Supplemente: Magnesium + Ashwagandha"],
+      ["21:45", "Dehnung oder Journaling"],
+      ["22:00", "Podcast mit Sleep-Timer"],
+      ["22:15", "Licht aus"]
+    ];
+
+    const tage = Object.keys(mahlzeiten);
+    const bewertungen = {};
+    const planner = document.getElementById("planner");
+
+    tage.forEach(tag => {
+      bewertungen[tag] = null;
+      const div = document.createElement("div");
+      div.className = "day-card";
+      div.innerHTML = `<h2>${tag}</h2>`;
+
+      tagesstruktur.forEach(([zeit, text]) => {
+        text = text.replace("{{Frühstück}}", mahlzeiten[tag].Frühstück)
+                   .replace("{{Mittag}}", mahlzeiten[tag].Mittag)
+                   .replace("{{Abendessen}}", mahlzeiten[tag].Abendessen);
+        div.innerHTML += `<div class='entry'><strong>${zeit}</strong> – ${text}</div>`;
+      });
+
+      div.innerHTML += `
+        <div class="radio">
+          <p>Hast du den Tag wie geplant gelebt?</p>
+          <label><input type="radio" name="${tag}" value="Ja" onchange="bewertungSetzen('${tag}', 'Ja')"> ✅ Ja</label>
+          <label><input type="radio" name="${tag}" value="Nein" onchange="bewertungSetzen('${tag}', 'Nein')"> ❌ Nein</label>
+        </div>
+      `;
+      planner.appendChild(div);
+    });
+
+    function bewertungSetzen(tag, wert) {
+      bewertungen[tag] = wert;
+    }
+
+    async function exportToExcel() {
+      const wb = new ExcelJS.Workbook();
+      const ws = wb.addWorksheet("Wochenplan");
+      ws.addRow(["Tag", "Zeit", "Aktivität", "Tag wie geplant?"]);
+
+      tage.forEach(tag => {
+        tagesstruktur.forEach(([zeit, text]) => {
+          text = text.replace("{{Frühstück}}", mahlzeiten[tag].Frühstück)
+                     .replace("{{Mittag}}", mahlzeiten[tag].Mittag)
+                     .replace("{{Abendessen}}", mahlzeiten[tag].Abendessen);
+          ws.addRow([tag, zeit, text, bewertungen[tag] ?? "–"]);
+        });
+      });
+
+      const stats = wb.addWorksheet("Auswertung");
+      stats.addRow(["Antwort", "Anzahl"]);
+      const ja = Object.values(bewertungen).filter(b => b === "Ja").length;
+      const nein = Object.values(bewertungen).filter(b => b === "Nein").length;
+      stats.addRow(["Ja", ja]);
+      stats.addRow(["Nein", nein]);
+      stats.addRow([]);
+      stats.addRow(["📊 Markiere A2:B3 → Einfügen → Diagramm"]);
+
+      const buffer = await wb.xlsx.writeBuffer();
+      const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Murisoft_Wochenplan.xlsx";
+      link.click();
+    }
+  </script>
+</body>
+</html>
