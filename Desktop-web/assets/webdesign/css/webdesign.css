@@ -1,0 +1,229 @@
+body {
+    background-color: #101010;
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  /* Navbar */
+.rounded-nav {
+    background-color: rgba(0, 0, 0, 0.5); /* halb transparentes Schwarz */
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    padding: 12px 30px;
+    border-radius: 40px;
+    max-width: 1200px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+@media (max-width: 576px) {
+  .rounded-nav {
+    left: auto;
+    right: 15px;
+    transform: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
+
+  .btn-request {
+    display: none; /* optional: Button auf Mobile ausblenden */
+  }
+}
+
+/* Logo */
+.navbar-brand img {
+    height: 45px;
+    filter: brightness(200%); /* Logo aufhellen */
+}
+
+/* Nav-Links */
+.navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+    margin: 0 15px;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #A8ED79 !important; /* Pastellgrün beim Hover */
+}
+
+/* Button */
+.btn-request {
+    background-color: #A8ED79;
+    color: #000;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-request:hover {
+    background-color: #8bd060;
+    color: #000;
+}
+
+  .custom-header {
+    line-height: 0;
+    border-bottom: 4px solid #A8ED79;
+  }
+  
+  .header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Intro */
+  .intro-section h1 {
+    color: #A8ED79;
+    font-size: 2.8rem;
+  }
+  
+  .services-grid-section h5 {
+    font-weight: 600;
+    color: #A8ED79;
+  }
+  
+  .service-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(168, 237, 121, 0.2);
+  }
+  
+  .service-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+  }
+  
+  .service-card ul li::before {
+    content: "✔";
+    color: #A8ED79;
+    margin-right: 8px;
+  }
+  
+  .btn-discover {
+    background-color: #9EE37D;
+    color: #101010;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(158, 227, 125, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  
+  .btn-discover:hover {
+    background-color: #88d45c;
+    color: #101010;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(158, 227, 125, 0.4);
+  }
+  /* Footer Styles */
+  .footer-dark {
+    background-color: #000;
+    color: #ccc;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 2px solid #A8ED79;
+  }
+  
+  .footer-link {
+    color: #A8ED79;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  .icon-img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(150%);
+    transition: transform 0.2s ease, filter 0.3s ease;
+  }
+  
+  .social-icons .icon-img:hover {
+    transform: scale(1.2);
+    filter: brightness(200%);
+  }
+  
+  .dark-input {
+    background-color: #111;
+    border: 1px solid #333;
+    color: #eee;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+    /* Dark Form Fields im Footer */
+    .footer-dark .dark-input {
+        background-color: #111;
+        border: 1px solid #333;
+        color: #eee;
+        border-radius: 8px;
+        padding: 10px 14px;
+      }
+      
+      .footer-dark .dark-input:focus {
+        outline: none;
+        border-color: #A8ED79;
+        box-shadow: 0 0 8px rgba(168, 237, 121, 0.3);
+      }
+  
+  .dark-input:focus {
+    border-color: #A8ED79;
+    box-shadow: 0 0 8px rgba(168, 237, 121, 0.3);
+    outline: none;
+  }
+  
+  ::placeholder {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+  
+  ::-moz-placeholder {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #ffffff !important;
+  }
+  
+  ::-ms-input-placeholder {
+    color: #ffffff !important;
+  }
+  
