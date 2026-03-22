@@ -1,0 +1,171 @@
+@media (max-width: 1150px) {
+  .hero-content h1 {
+    font-size: 76px;
+  }
+
+  .section-heading h2,
+  .supported-left h2,
+  .comparison-content h2,
+  .product-info h2 {
+    font-size: 46px;
+  }
+
+  .hero-grid,
+  .supported-grid,
+  .comparison-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .buy-card {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 82px;
+    left: 20px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px;
+    background: #0a0d12;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    padding: 84px 0 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 54px;
+  }
+
+  .hero-content p {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-specs {
+    flex-direction: column;
+  }
+
+  .display-main h2 {
+    font-size: 72px;
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .section-heading h2,
+  .supported-left h2,
+  .comparison-content h2,
+  .product-info h2 {
+    font-size: 34px;
+  }
+
+  .data-grid,
+  .compare-strip,
+  .product-columns,
+  .display-row {
+    grid-template-columns: 1fr;
+  }
+
+  .buy-card h3 {
+    font-size: 54px;
+  }
+
+  .visual-panel {
+    min-height: 280px;
+  }
+
+  .panel-core {
+    font-size: 28px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 28px, 1240px);
+  }
+
+  .header-inner {
+    min-height: 74px;
+  }
+
+  .nav {
+    top: 74px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .section-heading h2,
+  .supported-left h2,
+  .comparison-content h2,
+  .product-info h2 {
+    font-size: 30px;
+  }
+
+  .data-card,
+  .product-box,
+  .compare-box,
+  .buy-card,
+  .faq-question,
+  .faq-answer,
+  .vehicle-item,
+  .hero-spec {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .display-main {
+    padding: 20px;
+  }
+
+  .display-main h2 {
+    font-size: 58px;
+  }
+
+  .mini-card strong {
+    font-size: 24px;
+  }
+
+  .buy-card h3 {
+    font-size: 46px;
+  }
+}
