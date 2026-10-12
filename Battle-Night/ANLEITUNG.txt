@@ -1,0 +1,116 @@
+BATTLE NIGHT – FAIR PLAY EDITION
+==============================
+
+UPDATE / START
+1. In der bisherigen Version ein Backup exportieren und alte Controller-Tabs
+   schließen. ZIP vollständig in einen festen Ordner entpacken.
+2. controller.html öffnen. Backups der ursprünglichen Battle-Night-Version
+   und Party Edition lassen sich als Spielstand importieren. Vergangene Punkte
+   bleiben erhalten; die bisherige Gewinner-Wertung wird in eine Verteilung
+   auf alle Teilnehmer umgewandelt.
+3. In OBS die Browser-Quelle auf die NEUE overlay.html setzen und aktualisieren.
+   Breite 1920, Höhe 1080. Im Controller OBS verbinden: Werkzeuge >
+   WebSocket-Servereinstellungen in OBS aktivieren, Port 4455 und Passwort.
+4. Neue Features brauchen beide neuen HTML-Dateien. Keine zusätzliche Software
+   und kein Python-, PowerShell- oder HTTP-Server. Alle Assets sind eingebettet.
+
+FAIRNESS-PUNKTE FÜR ALLE
+Nach der Gewinnerwahl öffnet sich der bekannte Dialog. Neben den Regeln und der
+Siegbedingung gibt es jetzt für JEDEN MATCHTEILNEHMER ein eigenes Punktefeld.
+Der Vorschlag bleibt: Gewinner +2 im ersten Match, +3 im zweiten usw.; alle
+anderen zunächst 0. Ihr könnt die Verteilung frei ändern, beispielsweise Jonas
+als Anfänger +2, Muris als erfahrener Spieler +1, ein weiterer Teilnehmer +3.
+Die Wahl des Matchgewinners bleibt davon getrennt. Auch andere Spieler dürfen
+Punkte erhalten; ein Gewinner mit 0 Punkten zählt weiterhin als Match-Sieger.
+
+Abweichungen brauchen eine kurze gemeinsame Begründung. Erst nach Bestätigung
+wird gespeichert. Im Verlauf stehen alle Einzelpunkte und die Begründung.
+„Bearbeiten“ im Verlauf zeigt ebenfalls die Regeln daneben und lässt die
+Verteilung auf die ursprünglichen Teilnehmer nachträglich ändern.
+Bei Unentschieden ist der Vorschlag für alle 0, Fairness-Punkte sind trotzdem
+mit Begründung möglich. Überspringen und manuelle Korrekturen ändern die Folge
+2, 3, 4 … nicht. Jedes abgeschlossene Match (auch Unentschieden) erhöht sie.
+
+MATCHSIEGE UND ABENDSIEGE
+„Matchsiege“ unter dem Punktestand zählt die gewonnenen Einzelspiele.
+Der kleine Zähler neben dem Anfangsbuchstaben des Spielers zählt gewonnene
+GESAMTE ABENDE. Dieser Zähler steht auch im OBS-Overlay.
+Der LETZTE ABENDSIEGER wird gelb markiert. Das ist unabhängig davon, wer gerade
+im aktuellen Abend bei den Punkten führt. Die Krone markiert weiterhin den
+aktuellen alleinigen Punkte-Führenden.
+
+ABEND ABSCHLIESSEN
+Nach dem letzten gewünschten Match „Abend abschließen & Gesamtsieg buchen“
+anklicken und bestätigen. Das geht auch, wenn nicht alle Spiele gespielt wurden.
+Es darf kein Match mehr offen sein, und mindestens eines muss abgeschlossen sein.
+Wer bei den aktiven Spielern die meisten Gesamtpunkte hat, erhält einen Abendsieg.
+Bei Gleichstand bekommen alle gemeinsamen Führenden je einen Abendsieg und werden
+als letzte Abendsieger gelb markiert. Doppelte Buchung ist gesperrt.
+
+Nach dem Abschluss sind die Matchpunkte dieses Abends festgeschrieben. Für neue
+Spiele „Neuer Spieleabend“ verwenden. Das setzt Matchpunkte/Verlauf/Timer zurück,
+behält Spiele, Spieler UND Gesamtsiege. Neuer Punktevorschlag: wieder +2.
+Für einen bloßen Abbruch NICHT den Abend abschließen, sondern beide Backups sichern.
+
+Unter Einstellungen lassen sich bekannte frühere Abendsiege manuell eintragen,
+zum Beispiel Jonas bereits 2 Siege. Auch der letzte Abendsieger kann dort gesetzt
+werden. Frühere Abendsiege können nicht aus alten Match-Backups sicher abgeleitet
+werden und starten beim erstmaligen Update daher mit 0.
+
+ZWEI GETRENNTE BACKUPS
+1. „Gesamtsiege exportieren“ -> battle-gesamtsiege.json
+   Enthält nur Spieleridentitäten, Gesamtsiegeszähler, letzten Abendsieger und
+   einen kompakten Schutz gegen doppelte Buchung. KEINE Matchpunkte, Spiele,
+   Matchhistorie oder Timer. Auf einer frischen Seite stellt der Import auch
+   eure Spieler wieder her. Die Matchpunkte bleiben 0.
+2. „Spielstand exportieren“ -> battle-spielstand.json
+   Enthält laufenden Abend, Spieler, Spiele/Regeln, Einzelpunkte-Verteilungen,
+   Matchhistorie, aktuelle Auswahl, Timer und Abschlussstatus. KEINE allgemeinen
+   Abendsiegeszähler und kein allgemeiner Sieger-Verlauf.
+
+NEUER ABEND: Nur Gesamtsiege importieren, oder auf demselben PC einfach einen
+neuen Spieleabend starten. Vorherige Matchpunkte werden nicht in den neuen Abend
+übernommen. Spiele/Regeln bleiben auf demselben PC erhalten.
+ABGEBROCHENEN ABEND FORTSETZEN: Beide Dateien exportieren. Später zuerst den
+Spielstand, danach Gesamtsiege importieren. Beide Reihenfolgen werden unterstützt,
+diese Reihenfolge erhält jedoch die ursprünglichen Spielerzuordnungen direkt.
+
+„Gesamtsiege komplett leeren“ löscht nach Bestätigung alle Abendsiegeszähler und
+die Markierung des letzten Abendsiegers. Namen, laufende Punkte, Spiele, Timer
+und Matchhistorie werden davon nicht verändert. Anschließend kann ein leeres
+Gesamtsiege-Backup exportiert werden, das den zurückgesetzten Stand wiedergibt.
+
+SPEICHER UND OBS
+Spielstand und Gesamtsiege liegen unter getrennten Browser-Speicherschlüsseln
+und in getrennten persistenten OBS-Speicherplätzen. Die Gesamtsiege enthalten
+keine wachsende Liste vergangener Abende: nur Zähler pro Spieler und die letzte
+Siegerzuordnung. Sie werden bei Änderung überschrieben, nicht pro Match angehängt.
+Neue Backup-Dateien entstehen NUR beim ausdrücklichen Export-Klick.
+
+Das Overlay erhält beide Informationen zusammen zur Anzeige, die Speicherung
+und Exporte bleiben getrennt. Passwort bleibt nur im Arbeitsspeicher. Nach
+Neustart erneut mit OBS verbinden. Regelmäßig Backups exportieren, besonders
+vor Umzug oder Löschen von Browserdaten. Nur einen Controller gleichzeitig.
+
+2–6 SPIELER UND DESIGN
+Spieler hinzufügen/aussetzen, Kapazitäten, Auswahlfilter, Timer, Animationen,
+Sounds und Transparenz bleiben wie in der Party Edition. Der OBS-Balken bleibt
+880 Pixel breit und 82 Pixel hoch. Die kleinen Abendsiegeszähler und gelben
+Siegernamen sind darin integriert. Deckkraft weiterhin einstellbar (Start 38 %).
+
+DATEIEN
+controller.html – lokale Steuerung
+index.html – dieselbe Steuerung für statisches Hosting; nur einen Tab verwenden
+overlay.html – transparente OBS-Browser-Quelle
+src/ – lesbare Quellen
+
+PRÜFUNG
+Automatisiert geprüft: Punkte-Verteilung an alle Teilnehmer und nachträgliche
+Änderungen; Regeln in beiden Dialogen; Punktefolge; Spielerzahl-Grenzen;
+Abendsiege und geteilte Siege; Schutz vor Doppelbuchung; getrennte Speicher/
+Backups; Import nur der Gesamtsiege mit 0 Matchpunkten; beide Backups in beiden
+Reihenfolgen; Zurücksetzen ohne Änderung des Spielstands; alte Schema-3-Daten;
+OBS-Authentifizierung, JSON-Übertragung, gelbe Namen/Zähler und Wiederherstellung
+aus beiden OBS-Speicherplätzen. Vollständige eingebettete HTML-Skripte wurden mit
+simuliertem DOM und OBS ausgeführt. Eine echte visuelle Browser-/OBS-Prüfung war
+hier nicht verfügbar.
